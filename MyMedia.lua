@@ -15,6 +15,7 @@ LSM:Register("font", "*.ttf", [[Interface/Addons/UncouthMedia/font/*.ttf]])
 --   SOUND
 -- -----
 LSM:Register("sound", "Decidedly_Uncouth.mp3", [[Interface/Addons/UncouthMedia/sound/Decidedly_Uncouth.mp3]])
+LSM:Register("sound", "so_brave.ogg", [[Interface/Addons/UncouthMedia/sound/so_brave.ogg]])
 -- -----
 --   STATUSBAR
 -- -----
