@@ -1,0 +1,25 @@
+# generate a github action workflow that invoked builds/generate.sh on any push, and commits the changes to the repo
+name: Regenerate Lua
+on:
+  push:
+    paths:
+      - 'background/*'
+      - 'border/*'
+      - 'font/*'
+      - 'sound/*'
+      - 'statusbar/*'
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        permissions:
+          contents: write
+        steps:
+        - uses: actions/checkout@v3
+        - name: Generate Lua
+          run: |
+            ./.build/generate.sh
+        - uses: stefanzweifel/git-auto-commit-action@v4
+          with:
+            commit_message: Regenerated Lua
+            file_pattern: 'MyMedia.lua'
