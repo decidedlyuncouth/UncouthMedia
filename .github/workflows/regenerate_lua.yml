@@ -22,7 +22,9 @@ jobs:
         - name: Generate Lua
           run: |
             cat MyMedia.lua
-            ./.build/generate.sh
+            cd .build
+            ./generate.sh
+            cd ..
             cat MyMedia.lua
         - uses: stefanzweifel/git-auto-commit-action@v4
           with:
