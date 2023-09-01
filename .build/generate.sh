@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "This script will now prepare the files for using SharedMedia_DecidedlyUncouth"
-
 echo "Creating the TOC..."
 echo "## Interface: 100002" > ../UncouthMedia.toc
 echo "## Title: UncouthMedia" >> ../UncouthMedia.toc
