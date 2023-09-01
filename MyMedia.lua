@@ -2,20 +2,20 @@ local LSM = LibStub("LibSharedMedia-3.0")
 -- -----
 -- BACKGROUND
 -- -----
-LSM:Register("background", "*", [[Interface/Addons/SharedMedia_DecidedlyUncouth/background/*]])
+LSM:Register("background", "*", [[Interface/Addons/UncouthMedia/background/*]])
 -- -----
 --  BORDER
 -- -----
-LSM:Register("border", "*", [[Interface/Addons/SharedMedia_DecidedlyUncouth/border/*]])
+LSM:Register("border", "*", [[Interface/Addons/UncouthMedia/border/*]])
 -- -----
 --   FONT
 -- -----
-LSM:Register("font", "*.ttf", [[Interface/Addons/SharedMedia_DecidedlyUncouth/font/*.ttf]])
+LSM:Register("font", "*.ttf", [[Interface/Addons/UncouthMedia/font/*.ttf]])
 -- -----
 --   SOUND
 -- -----
-LSM:Register("sound", "Decidedly_Uncouth.mp3", [[Interface/Addons/SharedMedia_DecidedlyUncouth/sound/Decidedly_Uncouth.mp3]])
+LSM:Register("sound", "Decidedly_Uncouth.mp3", [[Interface/Addons/UncouthMedia/sound/Decidedly_Uncouth.mp3]])
 -- -----
 --   STATUSBAR
 -- -----
-LSM:Register("statusbar", "*", [[Interface/Addons/SharedMedia_DecidedlyUncouth/statusbar/*]])
+LSM:Register("statusbar", "*", [[Interface/Addons/UncouthMedia/statusbar/*]])
