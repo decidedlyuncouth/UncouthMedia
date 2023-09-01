@@ -1,6 +1,7 @@
 # generate a github action workflow that invoked builds/generate.sh on any push, and commits the changes to the repo
 name: Regenerate Lua
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'background/*'
@@ -16,10 +17,15 @@ jobs:
           contents: write
         steps:
         - uses: actions/checkout@v3
+          with:
+            ref: ${{ github.head_ref }}
         - name: Generate Lua
           run: |
-            ./.build/generate.sh
+            cat MyMedia.lua
+            cd .build
+            ./generate.sh
+            cd ..
+            cat MyMedia.lua
         - uses: stefanzweifel/git-auto-commit-action@v4
           with:
             commit_message: Regenerated Lua
-            file_pattern: 'MyMedia.lua'
