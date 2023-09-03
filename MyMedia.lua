@@ -14,8 +14,8 @@ LSM:Register("font", "Uncouth: *", [[Interface/Addons/UncouthMedia/font/*.ttf]])
 -- -----
 --   SOUND
 -- -----
-LSM:Register("sound", "Uncouth: hello darkness", [[Interface/Addons/UncouthMedia/sound/hello_darkness.ogg]])
-LSM:Register("sound", "Uncouth: so brave", [[Interface/Addons/UncouthMedia/sound/so_brave.ogg]])
+LSM:Register("sound", "Uncouth: Hello Darkness", [[Interface/Addons/UncouthMedia/sound/Hello_Darkness.ogg]])
+LSM:Register("sound", "Uncouth: So Brave", [[Interface/Addons/UncouthMedia/sound/So_Brave.ogg]])
 -- -----
 --   STATUSBAR
 -- -----
