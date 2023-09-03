@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Creating the TOC..."
-echo "## Interface: 100002" > ../UncouthMedia.toc
+echo "## Interface: 100105" > ../UncouthMedia.toc
 echo "## Title: UncouthMedia" >> ../UncouthMedia.toc
 echo "## Dependencies: SharedMedia" >> ../UncouthMedia.toc
 echo "MyMedia.lua" >> ../UncouthMedia.toc
