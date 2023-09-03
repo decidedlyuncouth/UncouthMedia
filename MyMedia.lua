@@ -2,15 +2,15 @@ local LSM = LibStub("LibSharedMedia-3.0")
 -- -----
 -- BACKGROUND
 -- -----
-LSM:Register("background", "Uncouth: *", [[Interface/Addons/UncouthMedia/background/*]])
+--       No background files found.
 -- -----
 --  BORDER
 -- -----
-LSM:Register("border", "Uncouth: *", [[Interface/Addons/UncouthMedia/border/*]])
+--       No border files found.
 -- -----
 --   FONT
 -- -----
-LSM:Register("font", "Uncouth: *", [[Interface/Addons/UncouthMedia/font/*.ttf]])
+--       No font files found.
 -- -----
 --   SOUND
 -- -----
@@ -19,4 +19,4 @@ LSM:Register("sound", "Uncouth: So Brave", [[Interface/Addons/UncouthMedia/sound
 -- -----
 --   STATUSBAR
 -- -----
-LSM:Register("statusbar", "Uncouth: *", [[Interface/Addons/UncouthMedia/statusbar/*]])
+--       No statusbar files found.
