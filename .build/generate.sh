@@ -13,8 +13,10 @@ echo "-- -----" >> ../MyMedia.lua
 echo "-- BACKGROUND" >> ../MyMedia.lua
 echo "-- -----" >> ../MyMedia.lua
 for F in ../background/*; do
-  echo "       $(basename "$F")"
-  echo 'LSM:Register("background", "'$(basename "$F")'", [[Interface/Addons/UncouthMedia/background/'$(basename "$F")']])' >> ../MyMedia.lua
+  filename=$(basename "$F")
+  title=$(echo "$filename" | sed 's/\.[^.]*$//' | sed 's/_/ /g')
+  echo "       $(basename "$F"), $title"
+  echo 'LSM:Register("background", "Uncouth: '$title'", [[Interface/Addons/UncouthMedia/background/'$filename']])' >> ../MyMedia.lua
 done
 
 #  echo "    BORDER" >> ../MyMedia.lua
@@ -22,8 +24,10 @@ echo "-- -----" >> ../MyMedia.lua
 echo "--  BORDER" >> ../MyMedia.lua
 echo "-- -----" >> ../MyMedia.lua
 for F in ../border/*; do
-  echo "       $(basename "$F")"
-  echo 'LSM:Register("border", "'$(basename "$F")'", [[Interface/Addons/UncouthMedia/border/'$(basename "$F")']])' >> ../MyMedia.lua
+  filename=$(basename "$F")
+  title=$(echo "$filename" | sed 's/\.[^.]*$//' | sed 's/_/ /g')
+  echo "       $(basename "$F"), $title"
+  echo 'LSM:Register("border", "Uncouth: '$title'", [[Interface/Addons/UncouthMedia/border/'$filename']])' >> ../MyMedia.lua
 done
 
 #  echo "    FONT" >> ../MyMedia.lua
@@ -31,8 +35,10 @@ echo "-- -----" >> ../MyMedia.lua
 echo "--   FONT" >> ../MyMedia.lua
 echo "-- -----" >> ../MyMedia.lua
 for F in ../font/*.ttf; do
-  echo "       $(basename "$F")"
-  echo 'LSM:Register("font", "'$(basename "$F")'", [[Interface/Addons/UncouthMedia/font/'$(basename "$F")']])' >> ../MyMedia.lua
+  filename=$(basename "$F")
+  title=$(echo "$filename" | sed 's/\.[^.]*$//' | sed 's/_/ /g')
+  echo "       $(basename "$F"), $title"
+  echo 'LSM:Register("font", "Uncouth: '$title'", [[Interface/Addons/UncouthMedia/font/'$filename']])' >> ../MyMedia.lua
 done
 
 #  echo "    SOUND" >> ../MyMedia.lua
@@ -40,8 +46,10 @@ echo "-- -----" >> ../MyMedia.lua
 echo "--   SOUND" >> ../MyMedia.lua
 echo "-- -----" >> ../MyMedia.lua
 for F in ../sound/*; do
-  echo "       $(basename "$F")"
-  echo 'LSM:Register("sound", "'$(basename "$F")'", [[Interface/Addons/UncouthMedia/sound/'$(basename "$F")']])' >> ../MyMedia.lua
+  filename=$(basename "$F")
+  title=$(echo "$filename" | sed 's/\.[^.]*$//' | sed 's/_/ /g')
+  echo "       $(basename "$F"), $title"
+  echo 'LSM:Register("sound", "Uncouth: '$title'", [[Interface/Addons/UncouthMedia/sound/'$filename']])' >> ../MyMedia.lua
 done
 
 #  echo "    STATUSBAR" >> ../MyMedia.lua
@@ -49,8 +57,10 @@ echo "-- -----" >> ../MyMedia.lua
 echo "--   STATUSBAR" >> ../MyMedia.lua
 echo "-- -----" >> ../MyMedia.lua
 for F in ../statusbar/*; do
-  echo "       $(basename "$F")"
-  echo 'LSM:Register("statusbar", "'$(basename "$F")'", [[Interface/Addons/UncouthMedia/statusbar/'$(basename "$F")']])' >> ../MyMedia.lua
+  filename=$(basename "$F")
+  title=$(echo "$filename" | sed 's/\.[^.]*$//' | sed 's/_/ /g')
+  echo "       $(basename "$F"), $title"
+  echo 'LSM:Register("statusbar", "Uncouth: '$title'", [[Interface/Addons/UncouthMedia/statusbar/'$filename']])' >> ../MyMedia.lua
 done
 
 #read -p "Press Enter to continue..."
