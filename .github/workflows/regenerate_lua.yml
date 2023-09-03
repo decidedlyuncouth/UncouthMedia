@@ -9,6 +9,7 @@ on:
       - 'font/*'
       - 'sound/*'
       - 'statusbar/*'
+      - 'UncouthMedia.toc'
 
 jobs:
     build:
