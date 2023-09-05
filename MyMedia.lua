@@ -20,3 +20,4 @@ LSM:Register("sound", "Uncouth: So Brave", [[Interface/Addons/UncouthMedia/sound
 --   STATUSBAR
 -- -----
 --       No statusbar files found.
+-- sprites soon?
