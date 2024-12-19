@@ -6,6 +6,7 @@ on:
     branches:
       - '*'
     paths:
+      - '.build/*'
       - 'background/*'
       - 'border/*'
       - 'font/*'
