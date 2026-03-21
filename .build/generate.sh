@@ -1,7 +1,8 @@
 #!/bin/bash
 
+INTERFACE_VERSION=$(cat ../wow-version.txt | tr -d '[:space:]')
 echo "Creating the TOC..."
-echo "## Interface: 110105" > ../UncouthMedia.toc
+echo "## Interface: $INTERFACE_VERSION" > ../UncouthMedia.toc
 echo "## Title: UncouthMedia" >> ../UncouthMedia.toc
 echo "## Dependencies: SharedMedia" >> ../UncouthMedia.toc
 echo "MyMedia.lua" >> ../UncouthMedia.toc
