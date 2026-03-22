@@ -64,15 +64,15 @@ else
     relpath=$(echo "$F" | sed 's|^\.\./||')
     filename=$(basename "$F")
     # Generate title: strip extension, split PascalCase and underscores into spaces
-    title=$(echo "$filename" | sed 's/\.[^.]*$//' | sed 's/_/ /g' | sed 's/\([a-z]\)\([A-Z]\)/\1 \2/g')
-    # Build prefix: !!UNCMedia for top-level, !!UNCMediaSubfolder for subfolders
+    title=$(echo "$filename" | sed 's/\.[^.]*$//' | sed 's/_/ /g' | sed 's/\([a-z]\)\([A-Z]\)/\1 \2/g' | sed 's/\([A-Z]\)\([A-Z][a-z]\)/\1 \2/g')
+    # Build prefix: !!UncMedia for top-level, !!UncMediaSubfolder for subfolders
     subdir=$(echo "$relpath" | sed 's|^sound/||' | sed 's|/[^/]*$||')
     if [ "$subdir" = "$filename" ] || [ -z "$subdir" ]; then
-      prefix="!!UNC"
+      prefix="!!Unc"
     else
       # Capitalize first letter of each subfolder
       subfolder=$(echo "$subdir" | sed 's|/| |g' | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)}1' | tr -d ' ')
-      prefix="!!UNC${subfolder}"
+      prefix="!!Unc${subfolder}"
     fi
     echo "       $relpath, $prefix $title"
     echo 'LSM:Register("sound", "'$prefix' '$title'", [[Interface/Addons/UncouthMedia/'$relpath']])' >> ../MyMedia.lua
