@@ -54,15 +54,28 @@ fi
 echo "-- -----" >> ../MyMedia.lua
 echo "--   SOUND" >> ../MyMedia.lua
 echo "-- -----" >> ../MyMedia.lua
-# If no files exist in the sound directory, then don't add the section to the file.
-if [ ! -f ../sound/* ]; then
+# Find all sound files recursively, skipping directories and .gitkeep
+SOUND_FILES=$(find ../sound -type f ! -name ".gitkeep" 2>/dev/null | sort)
+if [ -z "$SOUND_FILES" ]; then
   echo "--       No sound files found." >> ../MyMedia.lua
 else
-  for F in ../sound/*; do
+  echo "$SOUND_FILES" | while read F; do
+    # Get path relative to the addon root (e.g., sound/meme/Hello_Darkness.ogg)
+    relpath=$(echo "$F" | sed 's|^\.\./||')
     filename=$(basename "$F")
-    title=$(echo "$filename" | sed 's/\.[^.]*$//' | sed 's/_/ /g')
-    echo "       $(basename "$F"), $title"
-    echo 'LSM:Register("sound", "Uncouth: '$title'", [[Interface/Addons/UncouthMedia/sound/'$filename']])' >> ../MyMedia.lua
+    # Generate title: strip extension, split PascalCase and underscores into spaces
+    title=$(echo "$filename" | sed 's/\.[^.]*$//' | sed 's/_/ /g' | sed 's/\([a-z]\)\([A-Z]\)/\1 \2/g')
+    # Build prefix: !!UNCMedia for top-level, !!UNCMediaSubfolder for subfolders
+    subdir=$(echo "$relpath" | sed 's|^sound/||' | sed 's|/[^/]*$||')
+    if [ "$subdir" = "$filename" ] || [ -z "$subdir" ]; then
+      prefix="!!UNC"
+    else
+      # Capitalize first letter of each subfolder
+      subfolder=$(echo "$subdir" | sed 's|/| |g' | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)}1' | tr -d ' ')
+      prefix="!!UNC${subfolder}"
+    fi
+    echo "       $relpath, $prefix $title"
+    echo 'LSM:Register("sound", "'$prefix' '$title'", [[Interface/Addons/UncouthMedia/'$relpath']])' >> ../MyMedia.lua
   done
 fi
 
